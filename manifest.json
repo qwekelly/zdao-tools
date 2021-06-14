@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "找到小工具",
+  "description": "一些自己突发奇想的 基于chrome小插件 体验up up up",
+  "author": "quanwei_li",
+  "version": "1.0.0",
+  "icons": { "16": "logo_16.png","48": "logo_48.png","128": "logo_128.png" },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "notifications",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background":	{
+		"scripts": ["background/background.js"]
+	},
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content_script/content.js"]
+  }],
+  "browser_action": {
+    "default_icon": "logo_16.png",
+    "default_title": "找到小工具"
+  }
+}
